@@ -9,6 +9,7 @@ const statDesc     = document.querySelectorAll('.stat-desc');
 const baseStats    = document.querySelector('#base-stats');
 const pokedex      = document.querySelector('#pokedex');
 
+
 const typeColors = {
     "rock":     [182, 158,  49],
     "ghost":    [112,  85, 155],
@@ -49,7 +50,7 @@ search.addEventListener('change', async (event) => {
 
     // Validation when Pokémon does not exist
     if (!pkmnData) {
-        alert('Pokémon does not exist.');
+        alert('Not found :x');
         return;
     }
 
@@ -58,8 +59,6 @@ search.addEventListener('change', async (event) => {
     baseStats.style.color         = `rgb(${mainColor[0]}, ${mainColor[1]}, ${mainColor[2]})`;
     pokedex.style.backgroundColor = `rgb(${mainColor[0]}, ${mainColor[1]}, ${mainColor[2]})`;
 
-    // For debugging - Will be removed later on
-    console.log(pkmnData);
 
     // Sets pokemon # at the top of the page
     number.innerHTML = '#' + pkmnData.id.toString().padStart(3, '0');
@@ -89,4 +88,7 @@ search.addEventListener('change', async (event) => {
         barOuter[i].style.backgroundColor = `rgba(${mainColor[0]}, ${mainColor[1]}, ${mainColor[2]}, 0.3)`;
         statDesc[i].style.color           = `rgb(${mainColor[0]}, ${mainColor[1]}, ${mainColor[2]})`;
     });
+
+
+
 });
